@@ -1,0 +1,31 @@
+{
+  "name": "NodeExpressWaterlineHerokuStarter",
+  "description": "NodeJS ExpressJS Waterline JWT Heroku Starter",
+  "author": "Jorge Martinez jorge94ml@gmail.com",
+  "main": "server.js",
+  "engines": {
+    "node": "7.10.0"
+  },
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "forever server.js",
+    "list": "forever list",
+    "stop": "forever stop 0",
+    "deploy": "git add . && git commit -m 'deploy' && git push heroku master"
+  },
+  "dependencies": {
+    "base64url": "^2.0.0",
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.17.1",
+    "ejs": "^2.5.7",
+    "express": "~4.9.8",
+    "forever": "^0.15.3",
+    "helmet": "^3.5.0",
+    "jsonwebtoken": "^7.4.3",
+    "nodemailer": "^4.1.1",
+    "nodemon": "^1.11.0",
+    "sails-disk": "^0.10.10",
+    "waterline": "^0.11.11"
+  },
+  "license": "MIT"
+}
