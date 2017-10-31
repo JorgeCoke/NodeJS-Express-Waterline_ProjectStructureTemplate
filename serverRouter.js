@@ -13,8 +13,4 @@ router.use('/', require('./routes/exampleView'));
 
 router.use('/', require('./routes/example'));
 
-router.get('/', function (req, res) {
-  res.status(200).send('Hello World');
-});
-
 module.exports = router;

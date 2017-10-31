@@ -7,7 +7,7 @@ router.post('/', function (req, res) {
     var user = {
         email: req.body.email,
         password: req.body.password
-    }
+    };
     app.models.user.create(user).then(function () {
         res.status(200).send();
     }).catch(function (err) {

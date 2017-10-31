@@ -1,9 +1,19 @@
 var diskAdapter = require('sails-disk');
-
 var config = {};
+var isDevelopmentEnvironment = true;
 
-config.localUrl = 'localhost';
-config.localPort = '8001';
+if (isDevelopmentEnvironment){
+    //DEV
+    config.localUrl = '0.0.0.0';
+    config.localPort = '8001';
+} else {
+    //PRO
+    config.localUrl = '0.0.0.0';
+    config.localPort = '8001';
+}
+
+config.logUsername = 'root';
+config.logPassword = 'toor';
 
 // Seed for hash JWT
 config.superSecret = 'SecretJwtGenerator@JorgeCoke';
