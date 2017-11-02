@@ -7,7 +7,6 @@ var jwt = require('jsonwebtoken');
 
 router.post('/login', function (req, res) {
   app.models.user.findOneByEmail(req.body.email).then(function (result) {
-    console.log(result);
     if (!result) {
       res.status(500).send('Usuario no existente');
     } else {

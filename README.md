@@ -56,6 +56,12 @@ Gracias a Waterline, es posible cambiar el motor de base de datos modificando ú
 
     Para usar un modelo de datos en cualquier ubicación del directorio de trabajo basta con usar `app.models.<nombre_modelo>`. La variable `app` se define automáticamente de manera global y se añaden los modelos en el parámetro `models` al cargar Waterline en el arranque del servidor en el fichero `server.js`
 
+También es posible modificar la base de datos de cada modelo específicao modificando el parámetro `connection` de cada modelo.
+## Logs
+
+Se ha configurado la librería [morgan](https://github.com/expressjs/morgan) para que almacene todas las peticiones recibidas en ficheros ".log" en el directorio `/log` (Se creará un fichero nuevo cada 7 días).
+
+También se utiliza [morgan-body](https://github.com/sirrodgepodge/morgan-body) para mostrar por consola la cuerpo y la respuesta de cada petición recbida. Además de esto, se guardará todo el log en el fichero `/log/console.log`
 ## + Info
 
 - **bcrypt**: para encriptación de passwords + salt
@@ -66,7 +72,7 @@ Gracias a Waterline, es posible cambiar el motor de base de datos modificando ú
 
 - Documentar API con documentación inline [http://apidocjs.com/](http://apidocjs.com/)
 - Gestión de errores y errorHandlers [https://github.com/expressjs/errorhandler](https://github.com/expressjs/errorhandler)
-- Monitorización y gestión de log [https://github.com/expressjs/morgan](https://github.com/expressjs/morgan)
+- ~~Monitorización y gestión de logs [https://github.com/expressjs/morgan](https://github.com/expressjs/morgan)~~
 - Configurar librería Helmet + CSFR protection [https://github.com/expressjs/csurf](https://github.com/expressjs/csurf)
 - Añadir módulos (Notificaciones Push GCM & APN, Sockets, etc...)
 
