@@ -61,7 +61,7 @@ También es posible modificar la base de datos de cada modelo específicao modif
 
 Se ha configurado la librería [morgan](https://github.com/expressjs/morgan) para que almacene todas las peticiones recibidas en ficheros ".log" en el directorio `/log` (Se creará un fichero nuevo cada 7 días).
 
-También se utiliza [morgan-body](https://github.com/sirrodgepodge/morgan-body) para mostrar por consola la cuerpo y la respuesta de cada petición recbida. Además de esto, se guardará todo el log en el fichero `/log/console.log`
+También se utiliza [morgan-body](https://github.com/sirrodgepodge/morgan-body) para mostrar por consola el cuerpo y la respuesta de cada petición recbida. Además de esto, se guardará todo el log en el fichero `/log/console.log`. Este fichero está disponible en el end-point "/log" con autenticación básica HTTP.
 ## + Info
 
 - **bcrypt**: para encriptación de passwords + salt
