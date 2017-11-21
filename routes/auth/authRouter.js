@@ -8,7 +8,7 @@ var jwt = require('jsonwebtoken');
 router.post('/login', function (req, res) {
   app.models.user.findOneByEmail(req.body.email).then(function (result) {
     if (!result) {
-      res.status(500).send('Usuario no existente');
+      res.status(500).send({error:'Usuario no existente'});
     } else {
       // check if password matches
       if (bcrypt.compareSync(req.body.password, result.password)) {
@@ -16,13 +16,14 @@ router.post('/login', function (req, res) {
         var sessionToken = jwt.sign(result.email, config.superSecret, {
           //expiresIn: '24h' // expires in 24 hours
         });
-        res.status(200).send(sessionToken);
+        res.status(200).send({sessionToken:sessionToken});
       } else {
-        res.status(500).send('Password incorrecta');
+        res.status(500).send({error:'Password incorrecta'});
       }
     }
   }).catch(function (err) {
-    res.status(500).send(err);
+    console.log('err: ', err);
+    res.status(500).send({error:'Error al realizar peticion Login'});
   });
 });
 

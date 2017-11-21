@@ -3,11 +3,9 @@ var config = {};
 var isDevelopmentEnvironment = true;
 
 if (isDevelopmentEnvironment){
-    //DEV
     config.localUrl = '0.0.0.0';
     config.localPort = '8001';
 } else {
-    //PRO
     config.localUrl = '0.0.0.0';
     config.localPort = '8001';
 }
@@ -24,7 +22,7 @@ config.database = {
         diskAdapter: diskAdapter
     },
     connections: {
-        myConnection: {
+        diskAdapterConnection: {
             adapter: 'diskAdapter',
             inMemoryOnly: false     //false to force save local data in .tmp/myConnection.db file
         }

@@ -2,7 +2,7 @@ var Waterline = require('Waterline');
 
 var User = Waterline.Collection.extend({
     identity: 'user',
-    connection: 'myConnection', //Name of the Waterline connection
+    connection: 'diskAdapterConnection', //Name of the Waterline connection
 
     attributes: {
         email: {

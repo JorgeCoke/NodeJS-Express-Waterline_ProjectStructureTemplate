@@ -8,10 +8,11 @@ router.post('/', function (req, res) {
         email: req.body.email,
         password: req.body.password
     };
-    app.models.user.create(user).then(function () {
-        res.status(200).send();
+    app.models.user.create(user).then(function (result) {
+        res.status(200).send(result);
     }).catch(function (err) {
-        res.status(500).send(err);
+        console.log('err: ', err);
+        res.status(500).send({error:'Error al crear usuario'});
     });
 });
 
@@ -19,7 +20,8 @@ router.get('/', function (req, res) {
     app.models.user.find().then(function (result) {
         res.status(200).send(result);
     }).catch(function (err) {
-        res.status(500).send(err);
+        console.log('err: ', err);
+        res.status(500).send({error:'Error al obtener usuarios'});
     });
 });
 

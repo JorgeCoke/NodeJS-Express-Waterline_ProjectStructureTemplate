@@ -8,10 +8,10 @@
   },
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "forever server.js > log/console.log &",
+    "start": "nohup forever start server.js > log/console.log",
     "list": "forever list",
     "stop": "forever stop 0",
-    "deploy": "git add . && git commit -m 'deploy' && git push heroku master"
+    "deploy": "git add . && git commit -m 'npm deploy' && git push heroku master"
   },
   "dependencies": {
     "base64url": "^2.0.0",
